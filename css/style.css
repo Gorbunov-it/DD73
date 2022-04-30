@@ -190,6 +190,29 @@ section {
 
 
 /* @MEDIA SCREEN */
+@media screen and (max-device-width: 575px) {
+
+  .header .container {
+    max-width: 350px;
+  }
+
+  .header__text {
+    max-width: 400px;
+  }
+
+  .header__title {
+    font-size: 32px;
+  }
+
+  .header__img {
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  .header__img img {
+    width: 100%
+  }
+}
 
 @media screen and (max-device-width: 992px) {
 
