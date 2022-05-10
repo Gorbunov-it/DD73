@@ -12,6 +12,26 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button__link {
+  display: inline-block;
+  border-radius: 50px;
+  background-color: red;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 20px 60px;
+  font-size: 20px;
+}
+
 .container {
   max-width: 1180px;
   margin: 0px auto;
@@ -24,7 +44,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 3;
   box-shadow: 0 5px 5px -5px rgb(0 0 0 / 50%);
 }
 
@@ -36,7 +56,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  z-index: 2;
+  z-index: 1;
 }
 
 .nav__body {
@@ -47,7 +67,8 @@ body {
 }
 
 .nav__logo {
-  z-index: 3;
+  z-index: 2;
+  max-width: 300px;
 }
 
 .nav__burger {
@@ -57,7 +78,7 @@ body {
 .nav__list {
   display: flex;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 .nav__list li {
@@ -97,7 +118,6 @@ body {
   color: #000;
   text-transform: uppercase;
   font-size: 15px;
-  text-decoration: none;
 }
 
 /* NAVIGATION */
@@ -166,29 +186,16 @@ body {
   align-items: center;
 }
 
-.header__button a {
-  display: inline-block;
-  height: 62px;
-  border-radius: 50px;
-  background-color: red;
-  color: #fff;
-  font-weight: 800;
-  text-transform: uppercase;
-  text-decoration: none;
-  line-height: 64px;
-  padding-left: 60px;
-  padding-right: 60px;
-  font-size: 20px;
-}
-
 /* HEADER */
 
 
 /* ADVANTAGE */
 .section-advantage {
+  color: black;
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: rgba(235, 240, 244, 1);
+  box-shadow: 0px 0px 8px 0px #d4d4d4;
 }
 
 .advantage__row {
@@ -204,12 +211,14 @@ body {
   justify-content: space-between;
 }
 
-.advantage__card:last-child {
-  margin-right: 0;
+.advantage__img {
+  height: 80px;
+  min-width: 80px;
+  margin-right: 10px;
 }
 
-.advantage__img img {
-  margin-right: 10px;
+.advantage__card:last-child {
+  margin-right: 0;
 }
 
 .advantage-body p {
@@ -220,53 +229,90 @@ body {
 
 
 
+/* PRODUCT */
+.section-product {
+  height: auto;
+  /* height: calc(100vh - 80px); */
+  background-image: url("../images/fone-product.jpg");
+  background-size: cover;
+}
+
+.product__title {
+  font-size: 48px;
+  text-align: center;
+  font-weight: 800;
+  padding: 50px 0;
+}
+
+/* .product__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ */
+.product__row {
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.product__column {
+  flex: 0 1 25%;
+  margin-bottom: 50px;
+}
+
+.product__item {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.product__item img {
+  padding: 50px 0;
+}
+
+.protuct__text {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.protuct_btn {
+  margin-top: 50px;
+}
+
+/* PRODUCT */
+
+
+
 /* @MEDIA SCREEN */
-@media screen and (max-device-width: 576px) {
-
-  .header .container {
-    max-width: 350px;
-  }
-
+@media screen and (max-device-width : 1200px) {
   .header__text {
-    max-width: 400px;
-  }
-
-  .header__title {
-    font-size: 32px;
+    max-width: 450px;
   }
 
   .header__img {
-    max-width: 350px;
-    margin-bottom: 20px;
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-device-width:993px) and (max-device-width: 1100px) {
+  .nav__link {
+    font-size: 13px;
   }
 
-  .header__img img {
-    width: 100%
+  .product__row {
+    flex-wrap: wrap;
   }
 
-  .section-advantage {
-    padding: 0;
+  .product__column {
+    flex-basis: 50%;
   }
-
-  .advantage__row {
-    flex-direction: column;
-  }
-
-  .advantage__card {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
 }
 
 @media screen and (max-device-width: 992px) {
-
   body.lock {
     overflow: hidden;
-  }
-
-  .nav__logo img {
-    width: 300px;
   }
 
   .nav__body {
@@ -396,33 +442,42 @@ body {
 
   .advantage__card {
     padding-top: 50px;
+    padding-bottom: 50px;
   }
 
-  .advantage__card:last-child {
-    padding-bottom: 50px;
+  .product__row {
+    flex-wrap: wrap;
+  }
+
+  .product__column {
+    flex-basis: 50%;
   }
 }
 
-@media only screen and (min-device-width : 993px) and (max-device-width : 1200px) {
-
-  .nav__logo img {
-    width: 300px;
-  }
-
-  .nav__link {
-    font-size: 13px;
+@media screen and (max-device-width: 576px) {
+  .header .container {
+    max-width: 350px;
   }
 
   .header__text {
-    max-width: 450px;
+    max-width: 400px;
+  }
+
+  .header__title {
+    font-size: 32px;
   }
 
   .header__img {
-    max-width: 450px;
+    max-width: 350px;
+    margin-bottom: 20px;
   }
 
-  .header__img img {
-    width: 100%;
+  .section-advantage {
+    padding: 0;
+  }
+
+  .product__column {
+    flex-basis: 100%;
   }
 }
 
